@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>SzuYing Psychology - {{ title }}</title>
+    {% else %}
+        <title>SzuYing Psychology</title>
+    {% endif %}
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-9">
+        <h3 class="d-flex justify-content-center">test,test,test,test</h3>
+        </div>
+        <div class="col-3 col-md-0">
+        </div>
+        <div class="col-6 col-md-3">
+        <h3 class="text-center">Xavier Chiang</h3>
+        <img  class="img-fluid" src="/static/profile.JPG">        
+        </div>
+        <div class="col-3 col-md-0">
+        </div>        
+    </div>
+</div>

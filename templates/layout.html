@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>SzuYing Psychology - {{ title }}</title>
+    {% else %}
+        <title>SzuYing Psychology</title>
+    {% endif %}
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40HJ61KYHY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-40HJ61KYHY');
+</script>
+<body class="mx-0">
+    <div class="container">
+      <header class="site-header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #fafafa;">
+          <div class="container">
+            <a class="navbar-brand mr-4" style="color: #444444; font-weight: bold;" href="/">SzuYing Psychology</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"><img class="img-fluid" src="/static/MenuIcon.png"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" style="color:#444444" href="/about">About</a>
+                <a class="nav-item nav-link" style="color:#444444" href="/services">Services</a>
+                <a class="nav-item nav-link" style="color:#444444" href="/faq">FAQ</a>
+                <a class="nav-item nav-link" style="color:#444444" href="/contact">Contact</a>
+              </div>
+              <!-- Navbar Right Side
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" style="color:#444444" href="/chinese">中文</a>
+              </div> -->
+            </div>
+          </div>
+        </nav>
+
+        
+        
+      </header>
+    </div>
+    <main class="m-0" role="main">
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 SzuYing Psychology</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
