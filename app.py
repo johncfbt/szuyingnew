@@ -12,7 +12,7 @@ def about():
 
 @app.route("/chinese")
 def chinese():
-    return render_template('chinese.html', title='思穎心理診所 | 奧克蘭註冊臨床心理師 | 紐西蘭華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務')
+    return render_template('chinese.html', title='思穎心理診所 | 墨尔本註冊臨床心理師 | 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務')
 
 @app.route("/faq")
 def faq():
