@@ -125,3 +125,7 @@
   .maintxt h4 {
     text-align: center; /* Center the text horizontally */
   }
+
+  .home-paragraph{
+    margin-bottom: 0.5rem;
+  }
