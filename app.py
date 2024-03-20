@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', title='Melbourne Registered Clinical Psychologist | Talk Therapy | Support with Depresion, Anxiety, Obsessie and Compulsive Tendencies, Developmental and Identity Struggles')
+    return render_template('home.html', title='Melbourne Registered Clinical Psychologist | Diagnosis Assessment | Support with Depresion, Anxiety, Obsessive and Compulsive Tendencies, Developmental and Identity Struggles ')
 
 @app.route("/about")
 def about():
