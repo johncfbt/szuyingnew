@@ -10,6 +10,10 @@ def home():
 def about():
     return render_template('about.html', title='Dr. Xavier Chiang Ph.D.')
 
+@app.route("/MissionStatement")
+def missionStatement():
+    return render_template('MissionStatement.html', title='Mission Statement')
+
 @app.route("/chinese")
 def chinese():
     return render_template('chinese.html', title='思穎心理診所 | 墨尔本註冊臨床心理師 | 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務')
