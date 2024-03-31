@@ -47,10 +47,11 @@ def submit():
         lastName = request.form['lastName']
         email = request.form['email']
         phone = request.form['phone']
+        messageSubject = request.form['subject']
         message = request.form['message']
 
         # Format the text content of the email
-        text_content = f"Name: {firstName} {lastName}\nEmail: {email}\nPhone Number: {phone}\nSubject: {subject}\nMessage: {message}"
+        text_content = f"Name: {firstName} {lastName}\nEmail: {email}\nPhone Number: {phone}\nSubject: {messageSubject}\nMessage: {message}"
 
         to_emails = ["john.cfbt@gmail.com", "psychologyxavier@gmail.com", "drxavierchiang@gmail.com"]
 
