@@ -1,4 +1,9 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect, request
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import mailtrap as mt
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -29,6 +34,39 @@ def services():
 @app.route("/contact")
 def contact():
     return render_template('contact.html', title='Contact Xavier')
+
+@app.route('/success')
+def success_page():
+    return render_template('success.html', title='Message sent successfully' )
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    if request.method == 'POST':
+        subject = 'New Patient Message from Szuying.com'
+        firstName = request.form['firstName']
+        lastName = request.form['lastName']
+        email = request.form['email']
+        phone = request.form['phone']
+        message = request.form['message']
+
+        # Format the text content of the email
+        text_content = f"Name: {firstName} {lastName}\nEmail: {email}\nPhone Number: {phone}\nSubject: {subject}\nMessage: {message}"
+
+        to_emails = ["john.cfbt@gmail.com", "psychologyxavier@gmail.com", "drxavierchiang@gmail.com"]
+
+        # Create mail object with the formatted text content
+        mail = mt.Mail(
+            sender=mt.Address(email="mailtrap@szuying.com", name="New Patient Message"),
+            to=[mt.Address(email=email) for email in to_emails],
+            subject=subject,
+            text=text_content,  # Use the formatted text content here
+        )
+
+        # create client and send
+        client = mt.MailtrapClient(token="69b24dae8c14d1ccbcb811a96ad85829")
+        client.send(mail)
+
+        return redirect(url_for('success_page'))
 
 @app.route("/test")
 def test():
