@@ -13,11 +13,15 @@ def home():
 
 @app.route("/about")
 def about():
-    return render_template('about.html', title='Dr. Xavier Chiang Ph.D.')
+    return render_template('about.html', title='Dr. Xavier Chiang Ph.D. | Szuying Psychology')
 
 @app.route("/MissionStatement")
 def missionStatement():
-    return render_template('MissionStatement.html', title='Mission Statement')
+    return render_template('MissionStatement.html', title='Mission Statement | Szuying Psychology')
+
+@app.route("/blog")
+def blog():
+    return render_template('blog.html', title='Blog | Szuying Psychology')
 
 @app.route("/chinese")
 def chinese():
@@ -25,7 +29,7 @@ def chinese():
 
 @app.route("/faq")
 def faq():
-    return render_template('faq.html', title='FAQ')
+    return render_template('faq.html', title='FAQ | Szuying Psychology')
 
 @app.route("/services")
 def services():
@@ -33,11 +37,11 @@ def services():
 
 @app.route("/contact")
 def contact():
-    return render_template('contact.html', title='Contact Xavier')
+    return render_template('contact.html', title='Contact Xavier | Szuying Psychology')
 
 @app.route('/success')
 def success_page():
-    return render_template('success.html', title='Message sent successfully' )
+    return render_template('success.html', title='Message sent successfully | Szuying Psychology' )
 
 @app.route('/submit', methods=['POST'])
 def submit():
