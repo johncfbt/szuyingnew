@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, url_for, redirect, request, g
+from datetime import datetime, timedelta
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -6,38 +7,56 @@ import mailtrap as mt
 
 app = Flask(__name__)
 
+# Calculate next_available_date before each request
+@app.before_request
+def before_request():
+    # Get the current date
+    current_date = datetime.now()
+
+    # Calculate the next available appointment date
+    if 0 < current_date.weekday() < 4:  # Tue, Wed, Thu
+        next_available_date = current_date + timedelta(days=(5 - current_date.weekday()))
+    elif current_date.weekday() > 3:  # Fri, Sat, Sun
+        next_available_date = current_date + timedelta(days=(9 - current_date.weekday()))
+    else: # Mon
+        next_available_date = current_date + timedelta(days=2)
+
+    # Store next_available_date in the global object g
+    g.next_available_date = next_available_date
+
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', title='Melbourne Registered Clinical Psychologist | Diagnosis Assessment | Support with Depresion, Anxiety, Obsessive and Compulsive Tendencies, Developmental and Identity Struggles ')
+    return render_template('home.html', title='Melbourne Registered Clinical Psychologist | Diagnosis Assessment | Support with Depresion, Anxiety, Obsessive and Compulsive Tendencies, Developmental and Identity Struggles ', next_available_date=g.next_available_date)
 
 @app.route("/about")
 def about():
-    return render_template('about.html', title='Dr. Xavier Chiang Ph.D.')
+    return render_template('about.html', title='Dr. Xavier Chiang Ph.D.', next_available_date=g.next_available_date)
 
 @app.route("/MissionStatement")
 def missionStatement():
-    return render_template('MissionStatement.html', title='Mission Statement')
+    return render_template('MissionStatement.html', title='Mission Statement', next_available_date=g.next_available_date)
 
 @app.route("/blog")
 def blog():
-    return render_template('blog.html', title='Blog')
+    return render_template('blog.html', title='Blog', next_available_date=g.next_available_date)
 
 @app.route("/chinese")
 def chinese():
-    return render_template('chinese.html', title='思穎心理診所 | 墨尔本註冊臨床心理師 | 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務')
+    return render_template('chinese.html', title='思穎心理診所 | 墨尔本註冊臨床心理師 | 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務', next_available_date=g.next_available_date)
 
 @app.route("/faq")
 def faq():
-    return render_template('faq.html', title='FAQ')
+    return render_template('faq.html', title='FAQ', next_available_date=g.next_available_date)
 
 @app.route("/services")
 def services():
-    return render_template('services.html', title='Services')
+    return render_template('services.html', title='Services', next_available_date=g.next_available_date)
 
 @app.route("/contact")
 def contact():
-    return render_template('contact.html', title='Contact Xavier')
+    return render_template('contact.html', title='Contact Xavier', next_available_date=g.next_available_date)
+
 
 @app.route('/success')
 def success_page():
