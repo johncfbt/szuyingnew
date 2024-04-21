@@ -4,14 +4,18 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import mailtrap as mt
+import pytz
 
 app = Flask(__name__)
 
 # Calculate next_available_date before each request
 @app.before_request
 def before_request():
-    # Get the current date
-    current_date = datetime.now()
+    # Set the timezone to Australia/Melbourne
+    melbourne_timezone = pytz.timezone('Australia/Melbourne')
+
+    # Get the current date and time in the Melbourne timezone
+    current_date = datetime.now(melbourne_timezone)
 
     # Calculate the next available appointment date
     if 0 < current_date.weekday() < 4:  # Tue, Wed, Thu
