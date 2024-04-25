@@ -31,7 +31,7 @@ def before_request():
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', title='Melbourne Registered Clinical Psychologist | Diagnosis Assessment | Support with Depresion, Anxiety, Obsessive and Compulsive Tendencies, Developmental and Identity Struggles ', next_available_date=g.next_available_date)
+    return render_template('home.html', title='Melbourne Registered Clinical Psychologist | Diagnosis Assessment | MediCare and Victoria WorkSafe Provider| Support with Depresion, Anxiety, Obsessive and Compulsive Tendencies, Developmental and Identity Struggles ', next_available_date=g.next_available_date)
 
 @app.route("/about")
 def about():
@@ -63,7 +63,7 @@ def blog4():
 
 @app.route("/chinese")
 def chinese():
-    return render_template('chinese.html', title='思穎心理診所 | 墨尔本註冊臨床心理師 | 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務', next_available_date=g.next_available_date)
+    return render_template('chinese.html', title='墨尔本心理諮詢 | 墨尔本心理醫生| 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務 | 澳洲註冊臨床心理師 |MediCare and Victoria WorkSafe Provider | 思穎心理診所', next_available_date=g.next_available_date)
 
 @app.route("/faq")
 def faq():
