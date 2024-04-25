@@ -45,6 +45,22 @@ def missionStatement():
 def blog():
     return render_template('blog.html', title='Blog', next_available_date=g.next_available_date)
 
+@app.route("/blog1")
+def blog1():
+    return render_template('blog1.html', title='性侵Sexual Trauma與創傷後壓力症候群Post Traumatic Stress Disorders (PTSD)', next_available_date=g.next_available_date)
+
+@app.route("/blog2")
+def blog2():
+    return render_template('blog2.html', title='>聚焦的 接納與承諾療法 Focused Acceptance and Commitment Therapy', next_available_date=g.next_available_date)
+
+@app.route("/blog3")
+def blog3():
+    return render_template('blog3.html', title='Focused Acceptance and Commitment Therapy', next_available_date=g.next_available_date)
+
+@app.route("/blog4")
+def blog4():
+    return render_template('blog4.html', title='Diagnostic Assessment for the NDIS 或ACC supports 經驗談 Part One', next_available_date=g.next_available_date)
+
 @app.route("/chinese")
 def chinese():
     return render_template('chinese.html', title='思穎心理診所 | 墨尔本註冊臨床心理師 | 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務', next_available_date=g.next_available_date)
