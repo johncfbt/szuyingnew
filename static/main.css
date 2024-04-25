@@ -16,6 +16,12 @@
     letter-spacing: .2rem;
   }
   
+  @media (min-width: 576px) {
+    .btn-group {
+      display: none;
+    }
+  }
+
   .bg-steel {
     background-color: #5f788a;
   }
