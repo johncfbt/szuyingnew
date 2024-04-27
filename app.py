@@ -63,7 +63,7 @@ def blog4():
 
 @app.route("/chinese")
 def chinese():
-    return render_template('chinese.html', title='墨尔本心理諮詢 | 墨尔本心理醫生 | 思穎心理診所', next_available_date=g.next_available_date)
+    return render_template('chinese.html', title='墨爾本心理諮詢 | 墨爾本心理醫生 | 思穎心理診所', next_available_date=g.next_available_date)
 
 @app.route("/faq")
 def faq():
