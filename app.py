@@ -51,7 +51,7 @@ def blog1():
 
 @app.route("/blog2")
 def blog2():
-    return render_template('blog2.html', title='>聚焦的 接納與承諾療法 Focused Acceptance and Commitment Therapy', next_available_date=g.next_available_date)
+    return render_template('blog2.html', title='聚焦的 接納與承諾療法 Focused Acceptance and Commitment Therapy', next_available_date=g.next_available_date)
 
 @app.route("/blog3")
 def blog3():
@@ -63,7 +63,7 @@ def blog4():
 
 @app.route("/chinese")
 def chinese():
-    return render_template('chinese.html', title='墨尔本心理諮詢 | 墨尔本心理醫生| 澳洲華人心理醫生，提供焦慮/抑鬱症等的中文心理諮詢服務 | 澳洲註冊臨床心理師 |MediCare and Victoria WorkSafe Provider | 思穎心理診所', next_available_date=g.next_available_date)
+    return render_template('chinese.html', title='墨尔本心理諮詢 | 墨尔本心理醫生 | 思穎心理診所', next_available_date=g.next_available_date)
 
 @app.route("/faq")
 def faq():
