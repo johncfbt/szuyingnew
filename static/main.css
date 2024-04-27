@@ -8,10 +8,10 @@
 
 
   .chinese-content {
-  font-family: "Noto Sans TC", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Noto Sans SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 
   h2, h3, h4, h5, h6 {
