@@ -96,7 +96,7 @@ def submit():
         # Format the text content of the email
         text_content = f"Name: {firstName} {lastName}\nEmail: {email}\nPhone Number: {phone}\nSubject: {messageSubject}\nMessage: {message}"
 
-        to_emails = ["john.cfbt@gmail.com", "psychologyxavier@gmail.com", "drxavierchiang@gmail.com"]
+        to_emails = ["john.cfbt@gmail.com"]
 
         # Create mail object with the formatted text content
         mail = mt.Mail(
